@@ -278,3 +278,53 @@ html {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     }
 }
+/* Sketchfab Background */
+.bg-sketchfab {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bg-sketchfab iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  pointer-events: none;
+}
+
+/* Ensure hero section supports background */
+#hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Optional dark overlay for readability */
+#hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* Make text readable */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .bg-sketchfab {
+    display: none;
+  }
+
+  #hero {
+    background: black;
+  }
+}
